@@ -1,14 +1,9 @@
-import numpy as np
 import os.path
 import urllib.request
 import pandas as pd
 
 
 dataset = pd.read_csv('links2.csv')
-dataset.loc[dataset['Station'] == 4]
-
-X = dataset.iloc[0, [5,6,7,8,9,10]].values
-df = pd.DataFrame(X)
 
 li=[]
 name=[]
@@ -30,7 +25,8 @@ for a in range(0,25):
             name.append(Const+' Участок №'+StationNum)
 
 for a in range(len(li)):    
-    filename = os.path.join('downloads3', name[a]+'.jpg')
+    filename = os.path.join('downloads3',str(a)+' '+name[a]+'.jpg')
+    print(filename)
     print(li[a])
     try:
         urllib.request.urlretrieve(li[a], filename)
