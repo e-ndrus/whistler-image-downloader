@@ -28,9 +28,9 @@ for a in range(len(li)):
     filename = os.path.join('downloads3',str(a)+' '+name[a]+'.jpg')
     print(filename)
     print(li[a])
-#    try:
-#        urllib.request.urlretrieve(li[a], filename)
-#    except Exception as inst:
-#        print(inst)
-#        print('  Encountered unknown error. Continuing.') 
+    try:
+        urllib.request.urlretrieve(li[a], filename)
+    except Exception as inst:
+        print(inst)
+        print('  Encountered unknown error. Continuing.') 
         
