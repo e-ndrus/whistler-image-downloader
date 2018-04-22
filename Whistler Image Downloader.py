@@ -14,7 +14,7 @@ pathlib.Path('downloads3').mkdir(parents=True, exist_ok=True)
 def isNaN(num):
     return num != num
 
-for a in range(0,25):
+for a in range(0,len(dataset.index)):
         
     for i in range(5,11):
         fileLocation = dataset.iloc[a,i]
@@ -28,9 +28,9 @@ for a in range(len(li)):
     filename = os.path.join('downloads3',str(a)+' '+name[a]+'.jpg')
     print(filename)
     print(li[a])
-    try:
-        urllib.request.urlretrieve(li[a], filename)
-    except Exception as inst:
-        print(inst)
-        print('  Encountered unknown error. Continuing.') 
+#    try:
+#        urllib.request.urlretrieve(li[a], filename)
+#    except Exception as inst:
+#        print(inst)
+#        print('  Encountered unknown error. Continuing.') 
         
